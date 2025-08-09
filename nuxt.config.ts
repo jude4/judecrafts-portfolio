@@ -4,6 +4,15 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
+      htmlAttrs: { lang: 'en' },
+      title: 'JudeCrafts — Full‑Stack Developer',
+      meta: [
+        { name: 'description', content: 'Portfolio of Jude — Full‑Stack Developer specializing in Vue/Nuxt, React, and scalable backends. View selected works, services, and contact details.' },
+        { name: 'theme-color', content: '#4f46e5' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'JudeCrafts — Full‑Stack Developer' },
+        { property: 'og:description', content: 'Selected works, services, and contact details.' },
+      ],
       link: [
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         {
