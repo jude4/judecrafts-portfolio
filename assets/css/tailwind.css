@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add smooth scrolling and selection colors */
-@layer base {
-  html { scroll-behavior: smooth; }
-  ::selection { @apply bg-indigo-200 text-indigo-900; }
+/* Hide scrollbars utility */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
-/* Utilities */
-@layer utilities {
-  .glass { @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl; }
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
 }

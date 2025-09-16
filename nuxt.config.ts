@@ -34,5 +34,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon"],
+  runtimeConfig: {
+    resendApiKey: process.env.RESEND_API_KEY,
+  },
 });
