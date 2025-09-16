@@ -44,23 +44,40 @@
         I design and develop clean, efficient, and user-centric solutions that
         make the web a better place.
       </p>
-      <div class="mt-8 flex flex-col items-center gap-8">
-        <div class="flex justify-center gap-6">
+      <div class="mt-8 flex flex-col items-center gap-6">
+        <p
+          class="text-sm uppercase tracking-widest text-gray-500 dark:text-gray-400"
+        >
+          Let's connect
+        </p>
+        <div class="flex justify-center gap-4">
           <a
             href="https://github.com/jude4"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-transform transform hover:-translate-y-1"
+            aria-label="GitHub profile"
+            title="GitHub"
+            class="inline-flex items-center justify-center rounded-full p-3 ring-1 ring-gray-200 dark:ring-slate-700 bg-white/80 dark:bg-slate-800/70 backdrop-blur hover:ring-indigo-300 dark:hover:ring-indigo-500 hover:-translate-y-0.5 transition-all"
           >
-            <Icon name="mdi:github" class="w-8 h-8" />
+            <Icon
+              name="mdi:github"
+              class="w-6 h-6 text-gray-800 dark:text-gray-100"
+            />
+            <span class="sr-only">GitHub</span>
           </a>
           <a
             href="https://linkedin.com/in/jude-onohwosafe"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-transform transform hover:-translate-y-1"
+            aria-label="LinkedIn profile"
+            title="LinkedIn"
+            class="inline-flex items-center justify-center rounded-full p-3 ring-1 ring-gray-200 dark:ring-slate-700 bg-white/80 dark:bg-slate-800/70 backdrop-blur hover:ring-indigo-300 dark:hover:ring-indigo-500 hover:-translate-y-0.5 transition-all"
           >
-            <Icon name="mdi:linkedin" class="w-8 h-8" />
+            <Icon
+              name="mdi:linkedin"
+              class="w-6 h-6 text-[#0A66C2] dark:text-[#78A6E3]"
+            />
+            <span class="sr-only">LinkedIn</span>
           </a>
         </div>
         <div class="flex gap-4">
