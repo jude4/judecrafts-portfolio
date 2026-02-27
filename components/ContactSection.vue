@@ -7,29 +7,25 @@
   >
     <!-- Section Header -->
     <div
-      class="text-center mb-12 w-full"
-      v-animate-on-scroll="{
-        initial: 'opacity-0 translate-y-8',
-        final: 'opacity-100 translate-y-0',
-      }"
+      class="text-center mb-16 w-full"
+      v-animate-on-scroll
     >
       <h2
-        class="text-sm font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest"
+        class="text-sm font-bold text-primary-600 dark:text-primary-400 uppercase tracking-[0.2em]"
       >
-        Contact
+        Get In Touch
       </h2>
       <h3
-        class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mt-2"
+        class="text-4xl md:text-5xl font-black text-surface-900 dark:text-white mt-4"
       >
-        Have a Project in Mind?
+        Let's build something <span class="text-gradient">extraordinary.</span>
       </h3>
-      <p class="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-        Let's discuss your idea and see how we can create something amazing
-        together.
+      <p class="text-surface-600 dark:text-surface-400 mt-6 max-w-2xl mx-auto text-lg">
+        Have a project in mind or just want to say hi? My inbox is always open.
       </p>
     </div>
 
-    <div class="max-w-xl mx-auto">
+    <div class="max-w-2xl mx-auto glass dark:glass-dark p-8 md:p-12 rounded-[2rem] shadow-2xl" v-animate-on-scroll="{ initial: { opacity: 0, scale: 0.95 } }">
       <!-- Success Message -->
       <div
         v-if="success"
@@ -54,62 +50,54 @@
       <form
         v-if="!success"
         @submit.prevent="handleSubmit"
-        class="flex flex-col gap-6"
+        class="flex flex-col gap-8"
       >
-        <input
-          v-model="formData.name"
-          name="name"
-          class="p-3 w-full bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
-          type="text"
-          placeholder="Your Name"
-          required
-          v-animate-on-scroll="{
-            initial: 'opacity-0 scale-95',
-            final: 'opacity-100 scale-100',
-            delay: 'delay-100',
-          }"
-        />
-        <input
-          v-model="formData.email"
-          name="email"
-          class="p-3 w-full bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
-          type="email"
-          placeholder="Your Email"
-          required
-          v-animate-on-scroll="{
-            initial: 'opacity-0 scale-95',
-            final: 'opacity-100 scale-100',
-            delay: 'delay-200',
-          }"
-        />
-        <textarea
-          v-model="formData.message"
-          name="message"
-          rows="6"
-          class="p-3 w-full bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-md focus:ring-2 focus:ring-indigo-500 focus:outline-none transition"
-          placeholder="Your Message..."
-          required
-          v-animate-on-scroll="{
-            initial: 'opacity-0 scale-95',
-            final: 'opacity-100 scale-100',
-            delay: 'delay-300',
-          }"
-        ></textarea>
-        <button
-          type="submit"
-          :disabled="loading"
-          class="w-full bg-indigo-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900 transition-colors disabled:bg-indigo-400 disabled:cursor-not-allowed flex items-center justify-center"
-          v-animate-on-scroll="{
-            initial: 'opacity-0 scale-95',
-            final: 'opacity-100 scale-100',
-            delay: 'delay-400',
-          }"
-        >
-          <span v-if="!loading">Send Message</span>
-          <span v-else>
-            <Icon name="ph:spinner-gap-duotone" class="w-6 h-6 animate-spin" />
-          </span>
-        </button>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="text-sm font-semibold text-surface-600 dark:text-surface-400 ml-1">Your Name</label>
+            <input
+              v-model="formData.name"
+              name="name"
+              class="p-4 w-full bg-surface-50 dark:bg-surface-900 border border-surface-200 dark:border-surface-800 rounded-2xl focus:ring-2 focus:ring-primary-500 focus:outline-none transition-all"
+              type="text"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-semibold text-surface-600 dark:text-surface-400 ml-1">Email Address</label>
+            <input
+              v-model="formData.email"
+              name="email"
+              class="p-4 w-full bg-surface-50 dark:bg-surface-900 border border-surface-200 dark:border-surface-800 rounded-2xl focus:ring-2 focus:ring-primary-500 focus:outline-none transition-all"
+              type="email"
+              placeholder="john@example.com"
+              required
+            />
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="text-sm font-semibold text-surface-600 dark:text-surface-400 ml-1">Project Details</label>
+          <textarea
+            v-model="formData.message"
+            name="message"
+            rows="5"
+            class="p-4 w-full bg-surface-50 dark:bg-surface-900 border border-surface-200 dark:border-surface-800 rounded-2xl focus:ring-2 focus:ring-primary-500 focus:outline-none transition-all"
+            placeholder="Tell me about your project..."
+            required
+          ></textarea>
+        </div>
+        <MagneticButton>
+          <button
+            type="submit"
+            :disabled="loading"
+            class="w-full btn-primary py-4 text-lg flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <span v-if="!loading">Send Message</span>
+            <Icon v-if="!loading" name="mdi:send" class="w-5 h-5" />
+            <Icon v-else name="ph:spinner-gap-duotone" class="w-6 h-6 animate-spin" />
+          </button>
+        </MagneticButton>
       </form>
     </div>
   </ShuffleSection>

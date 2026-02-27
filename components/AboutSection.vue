@@ -6,56 +6,54 @@
     :hide-scrollbar="true"
   >
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full"
+      class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full"
     >
       <!-- Left side with image -->
-      <div class="relative w-full flex justify-center" v-animate-on-scroll>
-        <div class="relative w-64 h-64 sm:w-80 sm:h-80">
+      <div class="relative w-full flex justify-center" v-animate-on-scroll="{ initial: { opacity: 0, x: -50 } }">
+        <div class="relative w-72 h-72 sm:w-96 sm:h-96 group">
           <div
-            class="absolute inset-0 bg-indigo-100 dark:bg-slate-800 rounded-full transform -rotate-6"
+            class="absolute inset-0 bg-primary-500/10 rounded-3xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-500"
           ></div>
           <div
-            class="absolute inset-0 bg-indigo-200 dark:bg-slate-700 rounded-full transform rotate-6"
+            class="absolute inset-0 bg-accent-500/10 rounded-3xl transform rotate-6 group-hover:rotate-0 transition-transform duration-500"
           ></div>
           <div
-            class="relative w-full h-full rounded-full overflow-hidden shadow-xl z-10"
+            class="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl z-10 grayscale hover:grayscale-0 transition-all duration-700"
           >
             <img
               :src="avatar"
               alt="Jude's Avatar"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
             />
           </div>
         </div>
       </div>
 
       <!-- Right side with content -->
-      <div class="flex flex-col gap-6" v-animate-on-scroll>
-        <h2
-          class="text-sm font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest"
-        >
-          About Me
-        </h2>
-        <h3
-          class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white"
-        >
-          Designing with Passion, <br />Building with Precision.
-        </h3>
-        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-          I'm a passionate developer who loves bringing ideas to life, from the
-          first pixel to the last line of code. With over 6 years of experience
-          across the full stack, I specialize in creating seamless,
-          user-friendly digital experiences.
+      <div class="flex flex-col gap-8" v-animate-on-scroll="{ initial: { opacity: 0, x: 50 } }">
+        <div>
+          <h2
+            class="text-sm font-bold text-primary-600 dark:text-primary-400 uppercase tracking-[0.2em]"
+          >
+            Behind the Code
+          </h2>
+          <h3
+            class="text-4xl md:text-5xl font-black text-surface-900 dark:text-white mt-4 leading-tight"
+          >
+            Solving problems with <br /><span class="text-gradient">creative precision.</span>
+          </h3>
+        </div>
+
+        <p class="text-lg text-surface-600 dark:text-surface-400 leading-relaxed">
+          I'm a Full-Stack Engineer with a designer's eye. Over the past 6 years, I've focused on bridging the gap between <span class="text-surface-900 dark:text-white font-semibold">complex backend logic</span> and <span class="text-surface-900 dark:text-white font-semibold">elegant frontend interfaces</span>.
         </p>
 
         <!-- Skills -->
-        <div class="space-y-4 mt-4">
-          <SkillBar skill="HTML & CSS" percentage="95%" />
-          <SkillBar skill="JavaScript & TypeScript" percentage="90%" />
-          <SkillBar skill="Vue.js & Nuxt.js" percentage="90%" />
-          <SkillBar skill="React & Next.js" percentage="80%" />
-          <SkillBar skill="PHP & Laravel" percentage="85%" />
-          <SkillBar skill="Node.js & Nest.js" percentage="85%" />
+        <div class="space-y-6">
+          <h4 class="text-sm font-bold uppercase text-surface-400 tracking-widest">Technologies I master:</h4>
+          <div class="flex flex-wrap gap-3">
+            <SkillPill v-for="skill in skills" :key="skill" :skill="skill" />
+          </div>
         </div>
       </div>
     </div>
@@ -63,6 +61,11 @@
 </template>
 
 <script setup>
-import SkillBar from "./SkillBar.vue";
 import avatar from "~/assets/img/avatar.jpg";
+
+const skills = [
+  "JavaScript", "TypeScript", "Vue 3", "Nuxt.js", "React", "Next.js",
+  "Node.js", "NestJS", "PHP", "Laravel", "Tailwind CSS", "PostgreSQL",
+  "AWS", "Docker", "UI/UX Design"
+];
 </script>
