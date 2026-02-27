@@ -1,6 +1,7 @@
 <template>
-    <header class="fixed top-0 w-full z-50 transition-all duration-300" :class="{
-        'bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm shadow-sm': isScrolled,
+    <header class="fixed top-0 w-full z-50 transition-all duration-500" :class="{
+        'py-2 bg-white/70 dark:bg-surface-950/70 backdrop-blur-xl shadow-lg shadow-surface-950/5 border-b border-surface-200 dark:border-surface-800': isScrolled,
+        'py-6': !isScrolled
     }">
         <nav class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">

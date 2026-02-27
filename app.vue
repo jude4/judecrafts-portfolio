@@ -1,5 +1,6 @@
 <template>
-  <div :class="{ dark: isDark }" class="font-poppins">
+  <div :class="{ dark: isDark }" class="font-sans">
+    <CustomCursor />
     <NuxtLoadingIndicator color="#4f46e5" />
     <TheHeader v-model:is-dark="isDark" />
     <!-- The container for our sticky sections -->
